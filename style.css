@@ -149,6 +149,7 @@ body{
 }
 
 /*-----------------Sections-----------------*/
+
 .hero-section,
 .collection-section,
 .creators-section,
@@ -767,6 +768,7 @@ body{
     content: "";
     position: absolute;
     inset: 0;
+    border-radius: 20px;
     background-color: rgb(59, 59, 59, 0.1);
     backdrop-filter: blur(10px);
 }
