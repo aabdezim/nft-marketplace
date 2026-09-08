@@ -120,6 +120,14 @@ body{
     color: var(--text-color);
 }
 
+.btn-auction{
+    color: var(--background-color);
+    background-color: var(--text-color);
+}
+.btn-auction svg{
+    color: var(--call-color);
+}
+
 .nav-btn {
     height: 60px;
     padding: 0 30px;
@@ -282,18 +290,23 @@ body{
     align-items: center;
 }
 .hero-card-author img,
-.collection-author img {
+.collection-author img,
+.nft-author img,
+.auction-author img{
     border-radius: 100%;
     width: 24px;
     height: 24px;
 }
 .hero-card-author p,
-.collection-author-name {
+.collection-author-name,
+.nft-author,
+.auction-author-name{
     font-size: var(--font-size-base);
     line-height: var(--line-height-140);
 }
 .hero-card-title,
-.collection-title {
+.collection-title,
+.nft-title {
     font-size: var(--font-size-h6);
     font-weight: 600;
     text-transform: capitalize;
@@ -607,19 +620,19 @@ body{
     flex-direction: column;
 }
 
-.discover-img {
+.nft-img {
     width: 100%;
     aspect-ratio: 330 / 296;
     overflow: hidden;
 }
 
-.discover-img img {
+.nft-img img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.discover-info {
+.nft-info {
     padding: 20px 30px 25px;
     display: flex;
     flex-direction: column;
@@ -657,7 +670,7 @@ body{
 .nft-details {
     display: flex;
     justify-content: space-between;
-    margin-top: 15px;
+    margin-top: 25px;
 }
 
 .nft-price,
@@ -671,16 +684,205 @@ body{
     align-items: flex-end;
 }
 
-.nft-details .nft-name {
+.nft-details .nft-feature-name {
     color: var(--caption-color);
     font-family: var(--font-space-mono);
     font-size: var(--font-size-caption);
     line-height: var(--line-height-110);
 }
 
-.nft-details .nft-value {
+.nft-details .nft-feature-value {
     font-family: var(--font-space-mono);
     font-size: var(--font-size-base);
     line-height: var(--line-height-140);
     font-weight: 400;
 }
+
+
+/*----------------- Auction section -----------------*/
+
+.auction-section{
+    padding: 360px 0 60px;
+    background: url(assets/collection/collection-4.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.auction-section::before{
+    content: "";
+    position: absolute;
+    inset: 0; /*top:0 left:0 right:0 bottom: 0*/
+    background: linear-gradient(180deg, 
+    rgba(162, 89, 255, 0) 0%, 
+    rgba(162, 89, 255, 1) 100%);
+}
+
+.auction-wrap{
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    position: relative;
+}
+
+.auction-head{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: start;
+    width: 100%;
+}
+
+.auction-author{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-radius: 20px;
+    background-color: var(--secondary-color);
+    padding: 10px 20px;
+    color: var(--text-color);
+}
+
+.auction-title{
+    font-size: var(--font-size-h2);
+    font-weight: 600;
+    line-height: var(--line-height-110);
+    text-transform: capitalize;
+}
+
+.auction-timer{
+    background-color: rgb(59, 59, 59, 0.5);
+    border-radius: 20px;
+    padding: 30px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-family: var(--font-space-mono);
+    min-width: 295px;
+}
+
+.auction-timer::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgb(59, 59, 59, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.auction-text,
+.auction-time{
+    position: relative;
+}
+
+.auction-text,
+.auction-time-item{
+    font-size: var(--font-size-caption);
+    line-height: var(--line-height-110);
+}
+
+.auction-time{
+    display: flex;
+    gap: 10px;
+}
+
+.auction-time-value{
+    font-size: var(--font-size-h3);
+    font-weight: 700;
+    line-height: var(--line-height-120);
+    margin-bottom: 5px;
+}
+
+
+.auction-colon{
+    font-size: var(--font-size-h4);
+    line-height: var(--line-height-140);
+    font-weight: 700;
+}
+
+
+/*----------------- Work section -----------------*/
+
+.work-section {
+  background-color: var(--background-color);
+  padding: 80px 0;
+  color: var(--text-color);
+  font-family: var(--font-work-sans); 
+}
+
+.work-wrap {
+  max-width: 1050px;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+
+.section-headline {
+  margin-bottom: 48px;
+}
+
+.section-title {
+  font-size: var(--font-size-h3);
+  font-weight: 600;
+  line-height: var(--line-height-120);
+  margin-bottom: 10px;
+  color: var(--text-color);
+}
+
+.section-subtitle {
+  font-size: var(--font-size-h6);
+  line-height: var(--line-height-160);
+  color: var(--text-color);
+}
+
+.work-content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.work-card {
+  background-color: var(--secondary-color);
+  border-radius: 20px;
+  padding: 10px 30px 52px 30px; 
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.work-img {
+  width: 250px;
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px; 
+}
+
+.work-img a {
+  display: inline-block;
+  line-height: 0;
+}
+
+.work-img img {
+  max-width: 100%;
+  height: auto;
+}
+
+.work-title {
+  font-size: var(--font-size-h6);
+  font-weight: 600;
+  line-height: var(--line-height-140);
+  margin-top: 0; /* убрал лишний margin сверху, чтобы не писать margin-top 20 а внизу margin-bottom 10(я сам не догадался бы) */
+  margin-bottom: 10px; 
+  color: var(--text-color);
+}
+
+.work-desc {
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-140);
+  color: var(--text-color);
+  margin: 0;
+}
+
